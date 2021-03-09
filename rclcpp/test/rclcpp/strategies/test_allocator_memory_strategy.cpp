@@ -513,7 +513,8 @@ TEST_F(TestAllocatorMemoryStrategy, number_of_entities_with_subscription) {
   const std::string implementation_identifier = rmw_get_implementation_identifier();
   // TODO(asorbini): Remove Connext exception once ros2/rmw_connext is deprecated.
   if (implementation_identifier == "rmw_connext_cpp" ||
-    implementation_identifier == "rmw_cyclonedds_cpp") {
+    implementation_identifier == "rmw_cyclonedds_cpp")
+  {
     // For cyclonedds, a subscription will also add an event and waitable
     expected_sizes.size_of_events += 1;
     expected_sizes.size_of_waitables += 1;
